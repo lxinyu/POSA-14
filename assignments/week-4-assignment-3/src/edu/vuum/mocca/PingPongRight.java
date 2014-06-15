@@ -86,7 +86,7 @@ public class PingPongRight {
              */
 
             // TODO - You fill in here.
-        	for (int i=1; i<= mMaxIterations; i++) {
+        	for (int i=1; i<= mMaxLoopIterations; i++) {
         		acquire();
         		System.out.println(mStringToPrint + "(" + i + ")"); 
         		release();
@@ -143,7 +143,7 @@ public class PingPongRight {
 										        		pingString, 
 										        		pingSema, 
 										        		pongSema, 
-										        		10);
+										        		mMaxIterations);
         PlayPingPongThread pong = new PlayPingPongThread(/*
                                                           * TODO - You fill in
                                                           * here
@@ -151,7 +151,7 @@ public class PingPongRight {
 										        		pongString, 
 										        		pongSema, 
 										        		pingSema, 
-										        		10);
+										        		mMaxIterations);
 
         // TODO - Initiate the ping and pong threads, which will call
         // the run() hook method.
